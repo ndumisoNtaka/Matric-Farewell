@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Party Time</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250606-WA0205%282%29.jpg-Z882fdm44SHsHTI7vncoVWlkdp2I2X.jpeg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 800px;
+      margin-top: 60px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 45px;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #f6e624;
+    }
+
+    .section p {
+      font-size: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .qr-code {
+      margin-top: 10px;
+    }
+
+    .qr-code img {
+      width: 150px;
+      height: auto;
+      border: 4px solid white;
+      border-radius: 8px;
+    }
+
+    .scan-text {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #f6e624;
+      margin-top: 10px;
+    }
+
+    .back-link {
+      margin-top: 1.2rem;
+      color: red;
+      text-decoration: underline;
+      font-size: 1.8rem;
+      display: block;
+    }
+
+    .button-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+  .btn {
+                width: 200px;
+            }    
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>🎉 Party Time 🎉</h1>
+
+    <div class="section">
+      <h2>🎧 DJ Lineup</h2>
+      
+    </div>
+
+    <div class="section">
+      <h2>📍 Venue Info</h2>
+      <p>The event will be held at:<br>
+        <strong>Thabong Wedding and Conference Venue</strong><br>
+        Denne Road, Rand Collieries SH,<br>
+        Brakpan, South Africa</p>
+
+      <h2>🕓 Time</h2>
+      <p>18:00 - 00:00</p>
+
+      <div class="qr-code">
+        <img src="QR-MAPS.png" alt="Event QR Code">
+        <div class="scan-text">SCAN ME!</div>
+       <div class="button-container">
+            <a href="index.html" class="btn btn-primary">Back to Countdown</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matric Dance Countdown</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Great Vibes', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(to right, #2ca5be, #418ac1, #2ca5be);
+      color: #f6e624;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-align: center;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .formal-subtitle {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color:  #d5bb10 ;
+      margin-bottom: 10px;
+      text-shadow: 1px 77px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.nav-bar {
+      margin-bottom: 20px;
+    }
+
+    nav.nav-bar ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      transition: all 0.3s ease;
+    }
+
+    nav.nav-bar a {
+      text-decoration: none;
+      color: #f6e624;
+      font-size: 2.4rem;
+    }
+
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #f6e624;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    #countdown {
+      display: flex;
+      gap: 20px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 30px;
+      border-radius: 12px;
+      min-width: 90px;
+    }
+
+    .number {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 2.5rem;
+      color: #ccc;
+      margin-top: 8px;
+    }
+
+    @media screen and (max-width: 600px) {
+      #countdown {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      #nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>WordsWorth High School Matric Dance</h1>
+  <h2 class="formal-subtitle">✨✨✨Countdown to The Big Night!✨✨✨</h2>
+
+  <nav class="nav-bar">
+    <button id="menu-toggle">☰</button>
+    <ul id="nav-links">
+      <li><a href="party-time.html">Party Time</a></li>
+
+      <li><a href="pre-drinks.html">Pre-Drinks & Photos</a></li>
+
+      <li><a href="red-carpet.html">Red Carpet Event</a></li>
+
+      <li><a href="invitation-ceremony.html">Invitation Ceremony</a></li>
+
+      
+    </ul>
+  </nav>
+
+  <div id="countdown">
+    <div class="time-box">
+      <div id="days" class="number">00</div>
+      <div class="label">Days</div>
+    </div>
+    <div class="time-box">
+      <div id="hours" class="number">00</div>
+      <div class="label">Hours</div>
+    </div>
+    <div class="time-box">
+      <div id="minutes" class="number">00</div>
+      <div class="label">Minutes</div>
+    </div>
+    <div class="time-box">
+      <div id="seconds" class="number">00</div>
+      <div class="label">Seconds</div>
+    </div>
+  </div>
+
+  <script>
+    const eventDate = new Date("2025-06-26T18:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
